@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SovosController;
 use App\Jobs\envioEmailVerifica;
 use App\Mail\mailBienvenida;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,17 @@ Auth::routes(['verify' => true]); // Comprueba la existencia del correo
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/*$mail = new mailBienvenida();
+Route::get('/login',[App\Http\Controllers\SovosController::class,'getLogin'])->name('login');
 
-Mail::to('mario.cuadra@ubo.cl')->queue($mail);*/
+Route::get('/search',[App\Http\Controllers\SovosController::class,'getDocByRut'])->name('search');
+
+Route::get('/uregistered',[App\Http\Controllers\SovosController::class,'getUserRegistered'])->name('uregistered');
+
+Route::get('/signUp',[App\Http\Controllers\SovosController::class,'signUp'])->name('signUp');
+
+
+
+//Route::get('/valid',[App\Http\Controllers\SovosController::class,'getDocValid'])->name('valid');
+
+
 

@@ -21,9 +21,9 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
 
-       /* Login::class =>[
+        Login::class =>[
             UpdateLastLogin::class,
-        ]*/
+        ]
     ];
 
     /**
